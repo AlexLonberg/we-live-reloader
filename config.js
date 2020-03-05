@@ -39,5 +39,5 @@ export const disconnect = 5 * 60 * 1000
 // Только для `rollup-plugin-we-reloader`
 // К этому адресу добавиться и порт, только для `rollup-plugin-we-reloader` и `webpack-plugin-we-reloader`
 export const host = 'http://127.0.0.1'
-// Предпочтительный порт. По дефолту система выберет свободный порт
+// Предпочтительный порт. По умолчанию система выберет свободный порт
 export const port = 0

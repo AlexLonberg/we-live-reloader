@@ -73,7 +73,7 @@ export default [
 // Создайте новый файл фонового скрипта или импортируйте в любой имеющийся
 import { fsWeReloader } from 'we-live-reloader'
 
-// Можно оставить опции по дефолту, или установить собственные
+// Можно оставить опции по умолчанию, или установить собственные
 fsWeReloader({ readInterval: 1500, tabReload: true })
 
 // ... далее что угодно
@@ -142,7 +142,7 @@ fsWeReloader({ readInterval: 1500, tabReload: true })
 
 ### Использование примера fs-we-reloader
 
-Никаких действий не требуется, скрипт расширения регулярно сканирует собственный каталог и проверяет последние модификации файлов. Обновляйте данные в файлах реального каталога расширения `demo/fs-we-reloader/data-background.js` и `demo/fs-we-reloader/data-content.js` и наблюдайте за консолью.
+Никаких действий не требуется, скрипт расширения регулярно сканирует собственный каталог и проверяет последние модификации файлов. Обновляйте данные в файлах реального каталога расширения _demo/fs-we-reloader/data-background.js_ и _demo/fs-we-reloader/data-content.js_ и наблюдайте за консолью.
 
 ## Options
 
@@ -162,7 +162,7 @@ rollupPluginWeReloader({tabReload: true, ...})
   Полезно, если сразу обновляются большое кол-во файлов и команда обновления может повториться.
   
 * **tabReload=false:boolean** Перезагрузка активного таба.  
-  По умолчанию `chrome.tabs.reload(tab.id)`, для текущего активного tab-а, не вызывается . Если расширение использует встраивание скриптов, установка этого параметра в `true`, будет вызывать `chrome.tabs.reload(tab.id)`, после обновления `chrome.runtime.reload()`, и только для текущего активного таба.
+  По умолчанию `chrome.tabs.reload(tab.id)`, для текущего активного tab-а, не вызывается . Если расширение использует встраивание скриптов, установка этого параметра в `true`, будет вызывать `chrome.tabs.reload(tab.id)` после обновления `chrome.runtime.reload()` и только для текущего активного таба.
   
 * **bypassCache=false:boolean** Обойти локальный веб-кеш.  
   См. [WebExtensions/API/tabs/reload](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/reload)
@@ -172,7 +172,7 @@ rollupPluginWeReloader({tabReload: true, ...})
   
 * **port=0:number** Предпочтительный порт.  
   Только для `rollup-plugin-we-reloader`.   
-  По дефолту система выберет свободный порт и установит соединение `http://127.0.0.1:1234`.
+  По умолчанию система выберет свободный порт и установит соединение `http://127.0.0.1:1234`.
   
 
 Опций по умолчанию см. в файле корневого каталога _config.js_.
@@ -185,7 +185,7 @@ rollupPluginWeReloader({tabReload: true, ...})
 ```js
 // Пример вызова обновления, только при изменении
 //   файлов с расширением `.js` и только в каталоге `app`
-const filter = (path)=>(/\/?app\/[^/]+\.js$/i.test(path))
+const filter = (path) => (/\/?app\/[^/]+\.js$/i.test(path))
 rollupPluginWeReloader({tabReload: true, filter, ...})
 ```
 
@@ -194,7 +194,7 @@ rollupPluginWeReloader({tabReload: true, filter, ...})
   При использовании собственного перезагрузчика вызов `chrome.runtime.reload()` игнорируется.
 
 ```js
-// Изменяем поведение по дефолту
+// Изменяем поведение по умолчанию
 const userReload = () => {
   // Делаем что-нибудь
   // ... 
