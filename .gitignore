@@ -1,0 +1,5 @@
+.private/
+node_modules/
+package/
+!package/README.md
+!package/package.json

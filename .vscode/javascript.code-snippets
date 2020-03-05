@@ -1,0 +1,70 @@
+{
+  "@memberof folder - Function from file-mame": {
+    "scope": "javascript,typescript",
+    "prefix": "ff",
+    "body": [
+      "/**",
+      " * ",
+      " * ",
+      " * @memberof ${2}",
+      " * @param {___} ${2}",
+      " * @returns {___} ",
+      " * @example",
+      " * ${1}(${2})",
+      " * // => ",
+      " */",
+      "function ${1:${TM_FILENAME_BASE/(-+){1}(.){1}([^-]+)?/${2:/upcase}${3}/g}}(${2:${TM_DIRECTORY/(.)*(\\/|\\\\)([a-zA-Z]+)$/${3}/i}}) {",
+      "\t$0",
+      "\treturn ",
+      "}",
+      "",
+      "export default ${1}",
+      ""
+    ],
+    "description": "@memberof function fileName"
+  },
+  "@private folder - Hidden Function from file-mame": {
+    "scope": "javascript,typescript",
+    "prefix": "hff",
+    "body": [
+      "/**",
+      " * ",
+      " * ",
+      " * @private",
+      " * @memberof ${2}",
+      " * @param {___} ${2}",
+      " * @returns {___} ",
+      " * @example",
+      " * ${1}(${2})",
+      " * // => ",
+      " */",
+      "function ${1:${TM_FILENAME_BASE/(-+){1}(.){1}([^-]+)?/${2:/upcase}${3}/g}}(${2:${TM_DIRECTORY/(.)*(\\/|\\\\)([a-zA-Z]+)$/${3}/i}}) {",
+      "\t$0",
+      "\treturn ",
+      "}",
+      "",
+      "export {",
+      "  ${1}",
+      "}",
+      ""
+    ],
+    "description": "@private function fileName"
+  },
+  "import $0 from './file-name'": {
+    "scope": "javascript,typescript",
+    "prefix": "im",
+    "body": [
+      "import ${2:moduleName} from './$1'",
+      "$0"
+    ],
+    "description": "import $0 from './file-name'"
+  },
+  "import { $0 } from './file-name'": {
+    "scope": "javascript,typescript",
+    "prefix": "im",
+    "body": [
+      "import { $0 } from './$1'"
+    ],
+    "description": "import { $0 } from './file-name'"
+  }
+}

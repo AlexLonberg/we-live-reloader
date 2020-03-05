@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch module file",
+      "program": "${file}",
+      "runtimeArgs": [
+        "--experimental-modules",
+        "--es-module-specifier-resolution=node"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "nodemon watch file",
+      "runtimeExecutable": "npx",
+      "program": "${file}",
+      "restart": true,
+      "port": 9229,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "runtimeArgs": [
+        "nodemon",
+        "--experimental-modules",
+        "--es-module-specifier-resolution=node",
+        "--watch",
+        "${workspaceFolder}",
+        "--inspect-brk=9229"
+      ]
+    }
+  ]
+}

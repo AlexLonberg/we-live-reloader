@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Demo WE Live Reloader",
+  "description": "Demo WE Live Reloader",
+  "version": "0.1.0",
+  "author": "Alexander Lonberg",
+  "icons": {
+    "32": "icons/chemistry32.png",
+    "256": "icons/chemistry256.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "32": "icons/chemistry32.png",
+      "256": "icons/chemistry256.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "fs-we-reloader-tab.min.js",
+      "data-background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "data-content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "*://*/*"
+  ]
+}
