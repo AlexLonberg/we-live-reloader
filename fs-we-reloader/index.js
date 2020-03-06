@@ -84,7 +84,7 @@ export default function (opts) {
   function activeTabReload() {
     return new Promise((s) =>
       chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => (
-        (tab && chrome.tabs.reload(tab.id, { bypassCache })), s(tab ? tab.url : null)
+        tab ? (chrome.tabs.reload(tab.id, { bypassCache }), s(tab.url)) : s(null)
       )))
   }
 
